@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: corp-pg
+    environment:
+      POSTGRES_USER: batch
+      POSTGRES_PASSWORD: batch1234
+      POSTGRES_DB: corpdb
+      TZ: Asia/Seoul
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
